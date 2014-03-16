@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.lang.NumberFormatException;
 
 public class U10216032_hw3 extends JFrame {
 	
@@ -50,17 +51,30 @@ public class U10216032_hw3 extends JFrame {
 		});	
 	}
 
-	/*
+	// calculate BMI
 	public double getBMI(){
-		return ;
+		return weight / (height * height);
 	}
 
-	
+	// get states of Underweight, Normal, Overweight or Obese by BMI
 	public String getStatus(){
-		return ;
+		double bmi = getBMI();
+		if(bmi < 18.5){
+			return "Underweight";
+		}
+		else if(bmi < 25){
+			return "Normal";
+		}
+		else if(bmi < 30){
+			return "Overweight";			
+		}
+		else {
+			return "Obese";			
+		}
+	
 	}	
 	
-	*/
+	
 	
 	/**
 	 * Create the frame.
@@ -84,6 +98,7 @@ public class U10216032_hw3 extends JFrame {
 				height = Double.valueOf(textField.getText()) * METERS_PER_INCH; // get height(meter) , and turn it to double 
 				age = Integer.valueOf(textField_3.getText()); // get age , and turn it to int 
 				name = textField_4.getText(); // get name
+
 			}
 		});
 		btnCalculate.setBounds(169, 198, 87, 23);
@@ -171,11 +186,11 @@ public class U10216032_hw3 extends JFrame {
 		contentPane.add(lblAge);
 		
 		JLabel lblInputWeightpound = new JLabel("Input weight (pound)");
-		lblInputWeightpound.setBounds(20, 34, 111, 15);
+		lblInputWeightpound.setBounds(20, 34, 125, 15);
 		contentPane.add(lblInputWeightpound);
 		
 		JLabel lblInputHeight = new JLabel("Input height (inch)");
-		lblInputHeight.setBounds(155, 34, 95, 15);
+		lblInputHeight.setBounds(155, 34, 124, 15);
 		contentPane.add(lblInputHeight);		
 		
 		JLabel lblName = new JLabel("name");
