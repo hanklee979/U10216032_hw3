@@ -26,6 +26,8 @@ public class U10216032_hw3 extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -35,13 +37,22 @@ public class U10216032_hw3 extends JFrame {
 					e.printStackTrace();
 				}
 			}
-		});
+		});	
 	}
 
 	/**
 	 * Create the frame.
 	 */
 	public U10216032_hw3() {
+		
+		String name;
+		int age;
+		double weight;
+		double height;
+		final double KILOGRAMS_PER_PPOUND = 0.45359237;
+		final double METERS_PER_INCH = 0.0254;		
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
