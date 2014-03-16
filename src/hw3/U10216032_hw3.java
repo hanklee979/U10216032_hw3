@@ -14,13 +14,23 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 public class U10216032_hw3 extends JFrame {
-
+	
+	
+	String name;
+	int age;
+	double weight;
+	double height;	
+	final double KILOGRAMS_PER_PPOUND = 0.45359237;
+	final double METERS_PER_INCH = 0.0254;	
 	private JPanel contentPane;
+	
+	
 	private JTextField txt;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -40,25 +50,22 @@ public class U10216032_hw3 extends JFrame {
 		});	
 	}
 
+	/*
 	public double getBMI(){
 		return ;
 	}
 
+	
 	public String getStatus(){
 		return ;
 	}	
+	
+	*/
 	
 	/**
 	 * Create the frame.
 	 */
 	public U10216032_hw3() {
-		
-		String name;
-		int age;
-		double weight;
-		double height;
-		final double KILOGRAMS_PER_PPOUND = 0.45359237;
-		final double METERS_PER_INCH = 0.0254;		
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,6 +78,14 @@ public class U10216032_hw3 extends JFrame {
 		
 		// push the button to calculate result and print it
 		JButton btnCalculate = new JButton("calculate");
+		btnCalculate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				weight = Double.valueOf(txt.getText()) * KILOGRAMS_PER_PPOUND; // get weight(kilogram) , and turn it to double 
+				height = Double.valueOf(textField.getText()) * METERS_PER_INCH; // get height(meter) , and turn it to double 
+				age = Integer.valueOf(textField_3.getText()); // get age , and turn it to int 
+				name = textField_4.getText(); // get name
+			}
+		});
 		btnCalculate.setBounds(169, 198, 87, 23);
 		contentPane.add(btnCalculate);
 		
@@ -98,13 +113,13 @@ public class U10216032_hw3 extends JFrame {
 		textField.setColumns(10);
 		
 		
-		// print BMI
+		// get BMI
 		textField_1 = new JTextField();
 		textField_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		textField_1.setBounds(251, 137, 96, 21);
+		textField_1.setBounds(289, 137, 96, 21);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -116,7 +131,7 @@ public class U10216032_hw3 extends JFrame {
 			}
 		});
 		
-		textField_2.setBounds(70, 137, 96, 21);
+		textField_2.setBounds(289, 59, 96, 21);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -127,22 +142,32 @@ public class U10216032_hw3 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		textField_3.setBounds(289, 59, 96, 21);
+		textField_3.setBounds(155, 137, 96, 21);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
+		
+		// input name
+		textField_4 = new JTextField();
+		textField_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		textField_4.setBounds(20, 137, 96, 21);
+		contentPane.add(textField_4);
+		textField_4.setColumns(10);
 		
 		
 		// print hints
 		JLabel lblBmi = new JLabel("BMI");
-		lblBmi.setBounds(249, 113, 46, 15);
+		lblBmi.setBounds(289, 113, 46, 15);
 		contentPane.add(lblBmi);
 		
 		JLabel lblStatus = new JLabel("Status");
-		lblStatus.setBounds(70, 113, 46, 15);
+		lblStatus.setBounds(289, 34, 46, 15);
 		contentPane.add(lblStatus);
 				
 		JLabel lblAge = new JLabel("age");
-		lblAge.setBounds(289, 34, 46, 15);
+		lblAge.setBounds(155, 113, 46, 15);
 		contentPane.add(lblAge);
 		
 		JLabel lblInputWeightpound = new JLabel("Input weight (pound)");
@@ -152,5 +177,11 @@ public class U10216032_hw3 extends JFrame {
 		JLabel lblInputHeight = new JLabel("Input height (inch)");
 		lblInputHeight.setBounds(155, 34, 95, 15);
 		contentPane.add(lblInputHeight);		
+		
+		JLabel lblName = new JLabel("name");
+		lblName.setBounds(20, 113, 46, 15);
+		contentPane.add(lblName);
+		
+
 	}
 }
