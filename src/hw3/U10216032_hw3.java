@@ -98,7 +98,17 @@ public class U10216032_hw3 extends JFrame {
 				height = Double.valueOf(textField.getText()) * METERS_PER_INCH; // get height(meter) , and turn it to double 
 				age = Integer.valueOf(textField_3.getText()); // get age , and turn it to int 
 				name = textField_4.getText(); // get name
-
+			
+				// show result
+				System.out.println("name: " + name);
+				System.out.println("age: " + age);		
+				System.out.println("weight(kilogram): " + weight);		
+				System.out.println("height(meter): " + height);					
+				System.out.println("BMI: " + getBMI());				
+				System.out.println("Status: " + getStatus() );				
+			
+				textField_1.setText( String.valueOf( getBMI() ) ); // turn BMI to string and print it on the interface
+				textField_2.setText( getStatus() ); // print status on the interface 
 			}
 		});
 		btnCalculate.setBounds(169, 198, 87, 23);
@@ -117,7 +127,7 @@ public class U10216032_hw3 extends JFrame {
 		
 
 		
-		// Input height
+		// Input height (inch)
 		textField = new JTextField();
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,13 +138,13 @@ public class U10216032_hw3 extends JFrame {
 		textField.setColumns(10);
 		
 		
-		// get BMI
+		// print BMI
 		textField_1 = new JTextField();
 		textField_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		textField_1.setBounds(289, 137, 96, 21);
+		textField_1.setBounds(289, 137, 135, 21);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -146,12 +156,12 @@ public class U10216032_hw3 extends JFrame {
 			}
 		});
 		
-		textField_2.setBounds(289, 59, 96, 21);
+		textField_2.setBounds(289, 59, 135, 21);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
 		
-		// input age
+		// Input age
 		textField_3 = new JTextField();
 		textField_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -161,7 +171,7 @@ public class U10216032_hw3 extends JFrame {
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 		
-		// input name
+		// Input name
 		textField_4 = new JTextField();
 		textField_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
