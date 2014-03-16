@@ -40,6 +40,14 @@ public class U10216032_hw3 extends JFrame {
 		});	
 	}
 
+	public double getBMI(){
+		return ;
+	}
+
+	public String getStatus(){
+		return ;
+	}	
+	
 	/**
 	 * Create the frame.
 	 */
