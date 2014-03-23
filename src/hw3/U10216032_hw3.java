@@ -49,6 +49,7 @@ public class U10216032_hw3 extends JFrame {
 				}
 			}
 		});	
+	
 	}
 
 	// calculate BMI
@@ -117,69 +118,34 @@ public class U10216032_hw3 extends JFrame {
 		
 		// Input weight (pound)
 		txt = new JTextField();
-		txt.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		txt.setBounds(20, 59, 96, 21);
 		contentPane.add(txt);
-		txt.setColumns(10);
-		
-
 		
 		// Input height (inch)
 		textField = new JTextField();
-		textField.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		textField.setBounds(155, 59, 96, 21);
 		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		
 		// print BMI
 		textField_1 = new JTextField();
-		textField_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		textField_1.setBounds(289, 137, 135, 21);
 		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		
+
 		// print status
 		textField_2 = new JTextField();
-		textField_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
 		textField_2.setBounds(289, 59, 135, 21);
 		contentPane.add(textField_2);
-		textField_2.setColumns(10);
-		
 		
 		// Input age
 		textField_3 = new JTextField();
-		textField_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		textField_3.setBounds(155, 137, 96, 21);
 		contentPane.add(textField_3);
-		textField_3.setColumns(10);
 		
 		// Input name
 		textField_4 = new JTextField();
-		textField_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		textField_4.setBounds(20, 137, 96, 21);
 		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+
 		
 		
 		// print hints
